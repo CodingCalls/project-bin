@@ -1,8 +1,8 @@
-import "app.scss";
+import classes from  "./app.module.scss";
 
 const App = () => {
     return (
-        <div className="root">
+        <div className={classes.root}>
             <h1>React Template</h1>
         </div>
     );

@@ -1,13 +1,13 @@
 # Getting Started with Create React App
 
-This is Template for React Project 
+This is Template for React Project
 
 Packages included
 
 - [x] Scss
 - [x] Story Book
-- [ ] Scss Modules
-- [ ] .nvmrec File
+- [x] Scss Modules
+- [x] .nvmrec File
 - [ ] ClassNames Package
 
 ## Available Scripts
