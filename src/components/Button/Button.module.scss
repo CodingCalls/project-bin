@@ -1,6 +1,12 @@
-.buttonClass{
-
+.buttonClass {
     --button-color: var(--color-primary);
+    --text-white: #ffffff;
+    --font-color-disabled: #000000;
+    --color-disabled: grey;
+
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    ---weight-medium: 400;
 
     cursor: pointer;
     font-size: 100%;
@@ -8,5 +14,119 @@
     border-radius: 10px;
     padding: 0 20px;
     background-color: var(--button-color);
+}
 
+.small {
+    font-size: var(--font-size-small);
+    min-width: 81px;
+    max-height: 26px;
+    line-height: 18px;
+    padding: 10px;
+}
+
+.customise {
+    font-size: var(--font-size-small);
+    min-width: 63px;
+    min-height: 20px;
+    line-height: 12px;
+    padding: 4px;
+}
+
+.large {
+    font-size: var(--font-size-large);
+    min-width: 189px;
+    min-height: 38px;
+    line-height: 18px;
+    padding: 10px;
+    font-weight: var(--weight-medium);
+}
+
+.primary {
+    background-color: var(--button-color);
+    color: var(--text-white);
+
+    &:disabled:not(.clicked):not(.click-exit) {
+        color: var(--font-color-disabled);
+        background-color: var(--color-disabled);
+    }
+}
+
+.secondary {
+    color: var(--color-button-primary);
+    background: var(--secondary-button-bg-color);
+
+    &:disabled:not(.clicked):not(.click-exit) {
+        color: var(--color-disabled);
+    }
+
+    &.standard,
+    &.large {
+        font-weight: 400;
+    }
+
+    &:hover,
+    &.clicked {
+        --border: 1px solid var(--color-hovered);
+        font-weight: 400;
+    }
+
+    &:disabled {
+        &:hover {
+            --border: 1px solid var(--color-button-primary);
+        }
+    }
+}
+
+.error {
+    font-size: var(--font-size-large);
+    background-color: var(--color-button-error);
+    color: var(--text-white);
+    min-width: 189px;
+    min-height: 38px;
+    line-height: 18px;
+    padding: 10px;
+
+    &::before {
+        right: -110%;
+        background-color: var(--color-button-error);
+        color: var(--text-white);
+    }
+
+    &:hover {
+        color: var(--text-white);
+
+        &::before {
+            right: 0;
+        }
+    }
+}
+
+.clicked {
+    color: var(--text-white);
+
+    &::before {
+        right: 0;
+        background-color: var(--color-focused);
+    }
+
+    &::after {
+        opacity: 1;
+        background-color: var(--color-focused);
+    }
+}
+
+.click-exit {
+    &::before {
+        transition: all 400ms, right 1ms;
+    }
+
+    &::after {
+        opacity: 0;
+    }
+
+    &.primary {
+        &::after {
+            background-color: var(--color-button-primary);
+        }
+    }
 }

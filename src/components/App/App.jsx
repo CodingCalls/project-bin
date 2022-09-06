@@ -4,7 +4,7 @@ import classes from "./App.module.scss";
 const App = () => {
     return (
         <>
-            <Button />
+            <Button>Press</Button>
         </>
     );
 };
